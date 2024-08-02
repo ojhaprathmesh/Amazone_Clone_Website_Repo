@@ -1,0 +1,50 @@
+.lang-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 1000;
+    padding-top: 60px;
+    padding-left: 1050px;
+}
+
+.lang-modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 315px;
+    max-width: 80%;
+    text-align: center;
+    position: relative;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.lang-modal-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.lang-modal-content ul li {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+}
+
+.lang-modal-content ul li:hover {
+    background-color: #f0f0f0;
+}
