@@ -1,21 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import assets from "../../assets/assets";
-import "./Navbar_Higher.css";
+import "./NavbarHigher.css";
 import LanguageSelectionModal, { languages } from "../Modals/LanguageSelectionModal";
+import useCountryCode from "../APIs/LocationAPI";
 
-function Navbar_Higher({ personalDetail = { name: "", city: "", pincode: "" }, onDetailsClick }) {
-    const [countryCode, setCountryCode] = useState("");
+function NavbarHigher({ personalDetail = { name: "", city: "", pincode: "" }, onDetailsClick }) {
+    const countryCode = useCountryCode();
     const [isLangModalOpen, setIsLangModalOpen] = useState(false);
     const [currentLanguage, setCurrentLanguage] = useState("EN"); // Default language
-
-    useEffect(() => {
-        fetch("https://ipapi.co/json/")
-            .then((response) => response.json())
-            .then((data) => {
-                setCountryCode(data.country_code || "Unknown");
-            })
-            .catch(() => setCountryCode("Unknown"));
-    }, []);
 
     const handleLanguageChange = (code) => {
         setCurrentLanguage(code);
@@ -86,4 +78,4 @@ function Navbar_Higher({ personalDetail = { name: "", city: "", pincode: "" }, o
     );
 }
 
-export default Navbar_Higher;
+export default NavbarHigher;
