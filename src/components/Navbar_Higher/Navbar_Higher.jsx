@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import assets from "../../assets/assets";
 import "./Navbar_Higher.css";
-import LanguageSelectionModal from "../Modals/LanguageSelectionModal";
+import LanguageSelectionModal, { languages } from "../Modals/LanguageSelectionModal";
 
 function Navbar_Higher({ personalDetail = { name: "", city: "", pincode: "" }, onDetailsClick }) {
     const [countryCode, setCountryCode] = useState("");
     const [isLangModalOpen, setIsLangModalOpen] = useState(false);
+    const [currentLanguage, setCurrentLanguage] = useState("EN"); // Default language
 
     useEffect(() => {
         fetch("https://ipapi.co/json/")
@@ -17,9 +18,11 @@ function Navbar_Higher({ personalDetail = { name: "", city: "", pincode: "" }, o
     }, []);
 
     const handleLanguageChange = (code) => {
-        // Assuming you will handle language change elsewhere or through a context/provider
+        setCurrentLanguage(code);
         setIsLangModalOpen(false);
     };
+
+    const currentLangDetails = languages.find(lang => lang.code === currentLanguage);
 
     return (
         <nav className="navbar-higher">
@@ -60,11 +63,7 @@ function Navbar_Higher({ personalDetail = { name: "", city: "", pincode: "" }, o
                     {countryCode !== "Unknown" && (
                         <img className="flag-icon" src={`https://flagcdn.com/w80/${countryCode.toLowerCase()}.png`} alt="Country Flag" />
                     )}
-                    {countryCode !== "Unknown" ? (
-                        <span>{countryCode}</span>
-                    ) : (
-                        "Languages"
-                    )}
+                    <span>{currentLangDetails?.code}</span>
                 </div>
                 <div className="user">
                     <div id="profile">Profile</div>
