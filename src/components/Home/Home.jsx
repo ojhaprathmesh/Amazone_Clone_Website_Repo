@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Navbar_Higher from "../Navbar_Higher/Navbar_Higher";
-import Navbar_Lower from "../Navbar_Lower/Navbar_Lower";
+import NavbarHigher from "../NavbarHigher/NavbarHigher";
+import NavbarLower from "../NavbarLower/NavbarLower";
 import PersonalDetailsModal from "../Modals/PersonalDetailsModal";
 import "./Home.css";
 
@@ -28,7 +28,7 @@ function Home() {
     };
     return (
         <div className="home-container">
-            <Navbar_Higher personalDetail={selectedDetail} onDetailsClick={handleDetailsClick} />
+            <NavbarHigher personalDetail={selectedDetail} onDetailsClick={handleDetailsClick} />
             {isModalOpen && (
                 <PersonalDetailsModal
                     details={personalDetails}
@@ -36,7 +36,7 @@ function Home() {
                     onSelectDetail={handleSelectDetail}
                 />
             )}
-            <Navbar_Lower />
+            <NavbarLower />
         </div>
     );
 }
