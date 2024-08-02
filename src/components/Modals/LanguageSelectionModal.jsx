@@ -2,7 +2,7 @@ import React from "react";
 import "./LanguageSelectionModal.css";
 
 export const languages = [
-    { code: "EN", name: "Default (English)" },
+    { code: "EN", name: "English" },
     { code: "HI", name: "Hindi" },
     { code: "TA", name: "Tamil" },
     { code: "TE", name: "Telugu" },
