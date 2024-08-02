@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import assets from "../../assets/assets";
 import "./Navbar_Higher.css";
-import LanguageSelectionModal, { languages } from "../Modals/LanguageSelectionModal";
+import LanguageSelectionModal from "../Modals/LanguageSelectionModal";
 
 function Navbar_Higher({ personalDetail = { name: "", city: "", pincode: "" }, onDetailsClick }) {
     const [countryCode, setCountryCode] = useState("");
-    const [language, setLanguage] = useState(navigator.language || "en");
     const [isLangModalOpen, setIsLangModalOpen] = useState(false);
 
     useEffect(() => {
@@ -18,7 +17,7 @@ function Navbar_Higher({ personalDetail = { name: "", city: "", pincode: "" }, o
     }, []);
 
     const handleLanguageChange = (code) => {
-        setLanguage(code);
+        // Assuming you will handle language change elsewhere or through a context/provider
         setIsLangModalOpen(false);
     };
 
