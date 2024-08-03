@@ -1,20 +1,14 @@
 import React, { useState } from "react";
 import assets from "../../assets/assets";
 import "./NavbarHigher.css";
-import LanguageSelectionModal, { languages } from "../Modals/LanguageSelectionModal";
+import LanguageSelectionModal from "../Modals/LanguageSelectionModal";
 import useCountryCode from "../APIs/LocationAPI";
+import useLanguage from "../APIs/LanguageAPI";
 
 function NavbarHigher({ personalDetail = { name: "", city: "", pincode: "" }, onDetailsClick }) {
     const countryCode = useCountryCode();
+    const { currentLanguage, handleLanguageChange, currentLangDetails } = useLanguage();
     const [isLangModalOpen, setIsLangModalOpen] = useState(false);
-    const [currentLanguage, setCurrentLanguage] = useState("EN"); // Default language
-
-    const handleLanguageChange = (code) => {
-        setCurrentLanguage(code);
-        setIsLangModalOpen(false);
-    };
-
-    const currentLangDetails = languages.find(lang => lang.code === currentLanguage);
 
     return (
         <nav className="navbar-higher">
@@ -72,6 +66,7 @@ function NavbarHigher({ personalDetail = { name: "", city: "", pincode: "" }, on
                 <LanguageSelectionModal
                     onClose={() => setIsLangModalOpen(false)}
                     onSelectLanguage={handleLanguageChange}
+                    currentLanguage={currentLanguage}
                 />
             )}
         </nav>
