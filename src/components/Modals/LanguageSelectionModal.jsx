@@ -12,7 +12,7 @@ export const languages = [
     { code: "ML", name: "Malayalam" },
 ];
 
-function LanguageSelectionModal({ onClose, onSelectLanguage }) {
+function LanguageSelectionModal({ onClose, onSelectLanguage, currentLanguage }) {
     return (
         <div className="lang-modal-overlay" onClick={onClose}>
             <div className="lang-modal-content" onClick={(e) => e.stopPropagation()}>
@@ -20,7 +20,11 @@ function LanguageSelectionModal({ onClose, onSelectLanguage }) {
                 <h2>Select Language</h2>
                 <ul>
                     {languages.map(lang => (
-                        <li key={lang.code} onClick={() => onSelectLanguage(lang.code)}>
+                        <li
+                            key={lang.code}
+                            onClick={() => onSelectLanguage(lang.code)}
+                            className={currentLanguage === lang.code ? "selected" : ""}
+                        >
                             {lang.name}
                         </li>
                     ))}

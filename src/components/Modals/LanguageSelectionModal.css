@@ -48,3 +48,9 @@
 .lang-modal-content ul li:hover {
     background-color: #f0f0f0;
 }
+
+/* src/components/Modals/LanguageSelectionModal.css */
+.lang-modal-content ul li.selected {
+    font-weight: bold;
+    color: blue;
+}
