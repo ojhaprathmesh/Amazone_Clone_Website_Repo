@@ -3,6 +3,6 @@
   src: url('./assets/fonts/Amazon_Ember.ttf') format('truetype');
 }
 
-body {
+* {
   font-family: 'AmazonEmber', Arial, sans-serif;
 }
