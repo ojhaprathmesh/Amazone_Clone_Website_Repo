@@ -29,7 +29,9 @@ function NavbarHigher({ personalDetail = { name: "", city: "", pincode: "" }, on
             <div className="high-mid">
                 <div className="search">
                     <div className="bar">
-                        <button id="category">All</button>
+                        <button id="category">All
+                            <div className="triangle-down"></div>
+                        </button>
                     </div>
                     <div className="bar">
                         <input id="search-text" type="text" placeholder="Search Amazon.in" />
