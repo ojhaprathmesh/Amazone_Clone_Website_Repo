@@ -27,13 +27,12 @@ amazon_clone/
 │   ├── index.html                  # Main HTML file
 ├── src/
 │   ├── assets/
+│   │   ├── fonts/
+│   │   │   ├── Amazon_Ember.ttf    # Custom font
 │   │   ├── images/
 │   │   │   ├── amazon_icon.png     # Amazon icon image
 │   │   │   ├── logo.png            # Project logo image
 │   │   │   ├── location.png        # Location icon image
-│   │   ├── fonts/
-│   │   │   ├── Amazon_Ember.ttf    # Custom font
-│   │   ├── amazon_icon.svg          # Amazon icon in SVG format
 │   │   ├── assets.jsx              # Assets handling file
 │   ├── components/
 │   │   ├── About/
@@ -51,12 +50,12 @@ amazon_clone/
 │   │   ├── Home/
 │   │   │   ├── Home.jsx            # Home component
 │   │   │   ├── Home.css            # Styles for Home component
-│   │   ├── Navbar_Higher/
-│   │   │   ├── Navbar_Higher.jsx   # Navbar (Higher) component
-│   │   │   ├── Navbar_Higher.css   # Styles for Navbar (Higher) component
-│   │   ├── Navbar_Lower/
-│   │   │   ├── Navbar_Lower.jsx    # Navbar (Lower) component
-│   │   │   ├── Navbar_Lower.css    # Styles for Navbar (Lower) component
+│   │   ├── NavbarHigher/
+│   │   │   ├── NavbarHigher.jsx   # Navbar (Higher) component
+│   │   │   ├── NavbarHigher.css   # Styles for Navbar (Higher) component
+│   │   ├── NavbarLower/
+│   │   │   ├── NavbarLower.jsx    # Navbar (Lower) component
+│   │   │   ├── NavbarLower.css    # Styles for Navbar (Lower) component
 │   │   ├── Offers/
 │   │   │   ├── Offers.jsx          # Offers component
 │   │   │   ├── Offers.css          # Styles for Offers component
