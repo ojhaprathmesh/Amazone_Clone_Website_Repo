@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import assets from "../../assets/assets";
+import { assets } from "../../assets/assets";
 import LanguageSelectionModal from "../Modals/LanguageSelectionModal";
 import useCountryCode from "../Hooks/LocationHook";
 import useLanguage from "../Hooks/LanguageHook";
