@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import assets from "../../assets/assets";
-import "./NavbarHigher.css";
 import LanguageSelectionModal from "../Modals/LanguageSelectionModal";
-import useCountryCode from "../APIs/LocationAPI";
-import useLanguage from "../APIs/LanguageAPI";
+import useCountryCode from "../Hooks/LocationHook";
+import useLanguage from "../Hooks/LanguageHook";
+import "./NavbarHigher.css";
 
 function NavbarHigher({ personalDetail = { name: "", city: "", pincode: "" }, onDetailsClick }) {
     const countryCode = useCountryCode();
