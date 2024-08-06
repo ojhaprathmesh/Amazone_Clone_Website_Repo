@@ -1,36 +1,16 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useState } from "react";
+import { languages } from "../Modals/LanguageSelectionModal";
 
 const useLanguage = () => {
-  const [language, setLanguage] = useState('en');
-  const [translatedTexts, setTranslatedTexts] = useState({});
+    const [currentLanguage, setCurrentLanguage] = useState("EN"); // Default language
 
-  useEffect(() => {
-    if (language !== 'en') {
-      const translateTexts = async (texts) => {
-        const translated = {};
-        for (const key in texts) {
-          const response = await axios.post('https://libretranslate.de/translate', {
-            q: texts[key],
-            source: 'en',
-            target: language,
-            format: 'text',
-          });
-          translated[key] = response.data.translatedText;
-        }
-        setTranslatedTexts(translated);
-      };
-      translateTexts({
-        hello: 'Hello',
-        welcome: 'Welcome to our website!',
-        // Add more texts to translate here
-      });
-    } else {
-      setTranslatedTexts({});
-    }
-  }, [language]);
+    const handleLanguageChange = (code) => {
+        setCurrentLanguage(code);
+    };
 
-  return { language, setLanguage, translatedTexts };
+    const currentLangDetails = languages.find(lang => lang.code === currentLanguage);
+
+    return { currentLanguage, handleLanguageChange, currentLangDetails };
 };
 
 export default useLanguage;
