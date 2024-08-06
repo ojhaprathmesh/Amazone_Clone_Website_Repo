@@ -2,43 +2,36 @@ import React, { useState } from "react";
 import NavbarHigher from "../NavbarHigher/NavbarHigher";
 import NavbarLower from "../NavbarLower/NavbarLower";
 import PersonalDetailsModal from "../Modals/PersonalDetailsModal";
-import "./Home.css";
 
-const personalDetails = [
-    { name: "Prathmesh", phone: "1234567890", city: "Gurugram", pincode: "122001" },
-    { name: "John Doe", phone: "0987654321", city: "Delhi", pincode: "110001" },
-    // Add more personal details here
-];
+const Home = () => {
+  const [selectedDetail, setSelectedDetail] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-function Home() {
-    const [selectedDetail, setSelectedDetail] = useState(personalDetails.length > 0 ? personalDetails[0] : {});
-    const [isModalOpen, setIsModalOpen] = useState(false);
+  const handleDetailChange = (detail) => {
+    setSelectedDetail(detail);
+  };
 
-    const handleDetailsClick = () => {
-        setIsModalOpen(true);
-    };
+  const handleModalToggle = () => {
+    setIsModalOpen(!isModalOpen);
+  };
 
-    const handleSelectDetail = (detail) => {
-        setSelectedDetail(detail);
-        setIsModalOpen(false);
-    };
-
-    const handleCloseModal = () => {
-        setIsModalOpen(false);
-    };
-    return (
-        <div className="home-container">
-            <NavbarHigher personalDetail={selectedDetail} onDetailsClick={handleDetailsClick} />
-            {isModalOpen && (
-                <PersonalDetailsModal
-                    details={personalDetails}
-                    onClose={handleCloseModal}
-                    onSelectDetail={handleSelectDetail}
-                />
-            )}
-            <NavbarLower />
-        </div>
-    );
-}
+  return (
+    <div>
+      <NavbarHigher
+        selectedDetail={selectedDetail}
+        onDetailChange={handleDetailChange}
+        onModalToggle={handleModalToggle}
+      />
+      <NavbarLower />
+      {isModalOpen && (
+        <PersonalDetailsModal
+          selectedDetail={selectedDetail}
+          onDetailChange={handleDetailChange}
+          onModalToggle={handleModalToggle}
+        />
+      )}
+    </div>
+  );
+};
 
 export default Home;
