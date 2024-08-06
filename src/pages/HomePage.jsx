@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import Home from "../components/Home/Home";
+import AOS from "aos";
 import Body from "../components/Body/Body";
 import Footer from "../components/Footer/Footer";
+import Home from "../components/Home/Home";
 import Lenis from "@studio-freight/lenis";
-import AOS from "aos";
 import "aos/dist/aos.css";
 
 function HomePage() {
