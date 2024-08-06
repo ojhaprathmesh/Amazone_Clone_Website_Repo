@@ -19,8 +19,8 @@ This is a full-stack Amazon clone project built using React, Express, and MongoD
 ## File Structure
 
 ```plaintext
-amazon_clone/
-├── .gitattributes                    # Git attributes file
+Amazon_Clone_Website_Repo/
+├── .gitattributes                     # Git attributes file
 ├── .gitignore                         # Git ignore file
 ├── LICENSE                            # License information
 ├── package.json                       # Project metadata and dependencies
