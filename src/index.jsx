@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import { assets } from "./assets/assets";
+import assets from "./assets/assets";
 
 // Function to set the favicon dynamically
 const setFavicon = (iconUrl) => {
