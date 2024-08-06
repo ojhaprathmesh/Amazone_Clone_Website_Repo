@@ -3,7 +3,7 @@ import pageLogo from "./images/logo.png";
 import location from "./images/location.png";
 import AmazonEmberFont from "./fonts/Amazon_Ember.ttf";
 
-const assets = {
+export const assets = {
   images: {
     amazonIcon,
     pageLogo,
@@ -11,7 +11,5 @@ const assets = {
   },
   fonts: {
     AmazonEmberFont,
-  }
+  },
 };
-
-export default assets;
