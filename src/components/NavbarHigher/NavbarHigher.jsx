@@ -6,7 +6,7 @@ import useLanguage from "../Hooks/LanguageHook";
 import "./NavbarHigher.css";
 
 function NavbarHigher({ personalDetail = { name: "", city: "", pincode: "" }, onDetailsClick }) {
-    const { countryCode, getFlagUrl } = useCountryCode();
+    const { getFlagUrl } = useCountryCode();
     const { currentLanguage, handleLanguageChange, currentLangDetails } = useLanguage();
     const [isLangModalOpen, setIsLangModalOpen] = useState(false);
 
