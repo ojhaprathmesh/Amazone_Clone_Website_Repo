@@ -21,19 +21,18 @@ This is a full-stack Amazon clone project built using React, Express, and MongoD
 # File Structure
 
 ```plaintext
-amazon_clone/
+Amazon_Clone_Website_Repo/
 ├── public/
 │   ├── redirect                    # File for redirect logic
 │   ├── index.html                  # Main HTML file
 ├── src/
 │   ├── assets/
+│   │   ├── fonts/
+│   │   │   ├── Amazon_Ember.ttf    # Custom font
 │   │   ├── images/
 │   │   │   ├── amazon_icon.png     # Amazon icon image
 │   │   │   ├── logo.png            # Project logo image
 │   │   │   ├── location.png        # Location icon image
-│   │   ├── fonts/
-│   │   │   ├── Amazon_Ember.ttf    # Custom font
-│   │   ├── amazon_icon.svg          # Amazon icon in SVG format
 │   │   ├── assets.jsx              # Assets handling file
 │   ├── components/
 │   │   ├── About/
@@ -51,42 +50,48 @@ amazon_clone/
 │   │   ├── Home/
 │   │   │   ├── Home.jsx            # Home component
 │   │   │   ├── Home.css            # Styles for Home component
-│   │   ├── Navbar_Higher/
-│   │   │   ├── Navbar_Higher.jsx   # Navbar (Higher) component
-│   │   │   ├── Navbar_Higher.css   # Styles for Navbar (Higher) component
-│   │   ├── Navbar_Lower/
-│   │   │   ├── Navbar_Lower.jsx    # Navbar (Lower) component
-│   │   │   ├── Navbar_Lower.css    # Styles for Navbar (Lower) component
+│   │   ├── Hooks/
+│   │   │   ├── LanguageHook.jsx    # Hook for handling language logic
+│   │   │   ├── LocationHook.jsx    # Hook for handling location logic
+│   │   ├── Modals/
+│   │   │   ├── PersonalDetailsModal.jsx  # Personal Details Modal component
+│   │   │   ├── PersonalDetailsModal.css  # Styles for Personal Details Modal
+│   │   │   ├── LanguageSelectionModal.jsx # Language Selection Modal component
+│   │   │   ├── LanguageSelectionModal.css # Styles for Language Selection Modal
+│   │   ├── NavbarHigher/
+│   │   │   ├── NavbarHigher.jsx   # Navbar (Higher) component
+│   │   │   ├── NavbarHigher.css   # Styles for Navbar (Higher) component
+│   │   ├── NavbarLower/
+│   │   │   ├── NavbarLower.jsx    # Navbar (Lower) component
+│   │   │   ├── NavbarLower.css    # Styles for Navbar (Lower) component
 │   │   ├── Offers/
 │   │   │   ├── Offers.jsx          # Offers component
 │   │   │   ├── Offers.css          # Styles for Offers component
 │   │   ├── Services/
 │   │   │   ├── Services.jsx        # Services component
 │   │   │   ├── Services.css        # Styles for Services component
-│   │   ├── Modals/
-│   │   │   ├── PersonalDetailsModal.jsx  # Personal Details Modal component
-│   │   │   ├── PersonalDetailsModal.css  # Styles for Personal Details Modal
-│   │   │   ├── LanguageSelectionModal.jsx # Language Selection Modal component
-│   │   │   ├── LanguageSelectionModal.css # Styles for Language Selection Modal
 │   ├── pages/
 │   │   ├── HomePage.jsx            # Home Page component
 │   ├── App.jsx                      # Main App component
 │   ├── App.css                     # Styles for App component
 │   ├── index.jsx                   # Entry point for React application
 │   ├── index.css                   # Global styles
+├── LICENSE
+├── package.json
+├── README.md
 ```
 
 ## Setup
 
 1. **Clone the repository:**
 
-   ```bash
+   ```cmd
    git clone <repository_url>
    ```
 
 2. **Navigate to the project directory:**
    ```cmd
-   cd amazon_clone
+   cd Amazon_Clone_Website_Repo
    ```
 
 3. **Install dependencies:**
