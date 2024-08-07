@@ -12,7 +12,9 @@ export const languages = [
     { code: "ML", name: "Malayalam" },
 ];
 
-function LanguageSelectionModal({ onClose, onSelectLanguage, currentLanguage }) {
+function LanguageSelectionModal({ isOpen, onClose, onSelectLanguage, currentLanguage }) {
+    if (!isOpen) return null;
+
     return (
         <div className="lang-modal-overlay" onClick={onClose}>
             <div className="lang-modal-content" onClick={(e) => e.stopPropagation()}>

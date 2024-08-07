@@ -64,13 +64,12 @@ function NavbarHigher({ personalDetail = { name: "", city: "", pincode: "" }, on
                 </div>
                 <div id="cart">Cart</div>
             </div>
-            {isLangModalOpen && (
-                <LanguageSelectionModal
-                    onClose={() => setIsLangModalOpen(false)}
-                    onSelectLanguage={handleLanguageChange}
-                    currentLanguage={currentLanguage}
-                />
-            )}
+            <LanguageSelectionModal
+                isOpen={isLangModalOpen}
+                onClose={() => setIsLangModalOpen(false)}
+                onSelectLanguage={handleLanguageChange}
+                currentLanguage={currentLanguage}
+            />
         </nav>
     );
 }
