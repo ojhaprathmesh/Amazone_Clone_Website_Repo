@@ -7,8 +7,14 @@ import "./NavbarHigher.css";
 
 function NavbarHigher({ personalDetail = { name: "", city: "", pincode: "" }, onDetailsClick }) {
     const { getFlagUrl } = useCountryCode();
-    const { currentLanguage, handleLanguageChange, currentLangDetails } = useLanguage();
+    const { currentLanguage, handleLanguageChange: changeLanguage, currentLangDetails } = useLanguage();
     const [isLangModalOpen, setIsLangModalOpen] = useState(false);
+
+    // Wrapper function to handle language change and close modal
+    const handleLanguageChange = (langCode) => {
+        changeLanguage(langCode); // Change language
+        setIsLangModalOpen(false); // Close the modal
+    };
 
     return (
         <nav className="navbar-higher">
