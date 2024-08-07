@@ -12,7 +12,12 @@ const useCountryCode = () => {
             .catch(() => setCountryCode("Unknown"));
     }, []);
 
-    return countryCode;
+    const getFlagUrl = () => {
+        if (countryCode === "Unknown") return null;
+        return `https://flagcdn.com/w80/${countryCode.toLowerCase()}.png`;
+    };
+
+    return { countryCode, getFlagUrl };
 };
 
 export default useCountryCode;
