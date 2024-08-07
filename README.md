@@ -8,6 +8,8 @@ This is a full-stack Amazon clone project built using React, Express, and MongoD
 - **Language Selection Modal**: Allows users to choose from multiple languages, affecting the language of displayed text.
 - **Personal Details Modal**: Enables users to update and manage their personal details such as name, city, and pincode.
 - **Country Flag Display**: Shows the user's country flag based on their IP address.
+- **Smooth Scrolling**: Implemented using Lenis for a better user experience.
+- **Scroll Animations**: Utilizes AOS library to animate elements on scroll.
 
 ## Technologies
 
@@ -17,8 +19,6 @@ This is a full-stack Amazon clone project built using React, Express, and MongoD
 - **Libraries**: Lenis, AOS, react-router-dom
 
 ## File Structure
-
-# File Structure
 
 ```plaintext
 Amazon_Clone_Website_Repo/
@@ -36,40 +36,40 @@ Amazon_Clone_Website_Repo/
 │   │   ├── assets.jsx              # Assets handling file
 │   ├── components/
 │   │   ├── About/
-│   │   │   ├── About.css           # About component
-│   │   │   ├── About.jsx           # Styles for About component
+│   │   │   ├── About.css           # Styles for About component
+│   │   │   ├── About.jsx           # About component
 │   │   ├── Body/
-│   │   │   ├── Body.css            # Body component
-│   │   │   ├── Body.jsx            # Styles for Body component
+│   │   │   ├── Body.css            # Styles for Body component
+│   │   │   ├── Body.jsx            # Body component
 │   │   ├── Footer/
-│   │   │   ├── Footer.css          # Footer component
-│   │   │   ├── Footer.jsx          # Styles for Footer component
+│   │   │   ├── Footer.css          # Styles for Footer component
+│   │   │   ├── Footer.jsx          # Footer component
 │   │   ├── History/
-│   │   │   ├── History.css         # History component
-│   │   │   ├── History.jsx         # Styles for History component
+│   │   │   ├── History.css         # Styles for History component
+│   │   │   ├── History.jsx         # History component
 │   │   ├── Home/
-│   │   │   ├── Home.css            # Home component
-│   │   │   ├── Home.jsx            # Styles for Home component
+│   │   │   ├── Home.css            # Styles for Home component
+│   │   │   ├── Home.jsx            # Home component
 │   │   ├── Hooks/
 │   │   │   ├── LanguageHook.jsx    # Hook for handling language logic
 │   │   │   ├── LocationHook.jsx    # Hook for handling location logic
 │   │   ├── Modals/
-│   │   │   ├── LanguageSelectionModal.css # Language Selection Modal component
-│   │   │   ├── LanguageSelectionModal.jsx # Styles for Language Selection Modal
-│   │   │   ├── PersonalDetailsModal.css   # Personal Details Modal component
-│   │   │   ├── PersonalDetailsModal.jsx   # Styles for Personal Details Modal
+│   │   │   ├── LanguageSelectionModal.css # Styles for Language Selection Modal
+│   │   │   ├── LanguageSelectionModal.jsx # Language Selection Modal component
+│   │   │   ├── PersonalDetailsModal.css   # Styles for Personal Details Modal
+│   │   │   ├── PersonalDetailsModal.jsx   # Personal Details Modal component
 │   │   ├── NavbarHigher/
-│   │   │   ├── NavbarHigher.jsx    # Navbar (Higher) component
 │   │   │   ├── NavbarHigher.css    # Styles for Navbar (Higher) component
+│   │   │   ├── NavbarHigher.jsx    # Navbar (Higher) component
 │   │   ├── NavbarLower/
-│   │   │   ├── NavbarLower.jsx     # Navbar (Lower) component
 │   │   │   ├── NavbarLower.css     # Styles for Navbar (Lower) component
+│   │   │   ├── NavbarLower.jsx     # Navbar (Lower) component
 │   │   ├── Offers/
-│   │   │   ├── Offers.jsx          # Offers component
 │   │   │   ├── Offers.css          # Styles for Offers component
+│   │   │   ├── Offers.jsx          # Offers component
 │   │   ├── Services/
-│   │   │   ├── Services.jsx        # Services component
 │   │   │   ├── Services.css        # Styles for Services component
+│   │   │   ├── Services.jsx        # Services component
 │   ├── pages/
 │   │   ├── HomePage.jsx            # Home Page component
 │   ├── App.jsx                     # Main App component
