@@ -36,34 +36,34 @@ Amazon_Clone_Website_Repo/
 │   │   ├── assets.jsx              # Assets handling file
 │   ├── components/
 │   │   ├── About/
-│   │   │   ├── About.jsx           # About component
-│   │   │   ├── About.css           # Styles for About component
+│   │   │   ├── About.css           # About component
+│   │   │   ├── About.jsx           # Styles for About component
 │   │   ├── Body/
-│   │   │   ├── Body.jsx            # Body component
-│   │   │   ├── Body.css            # Styles for Body component
+│   │   │   ├── Body.css            # Body component
+│   │   │   ├── Body.jsx            # Styles for Body component
 │   │   ├── Footer/
-│   │   │   ├── Footer.jsx          # Footer component
-│   │   │   ├── Footer.css          # Styles for Footer component
+│   │   │   ├── Footer.css          # Footer component
+│   │   │   ├── Footer.jsx          # Styles for Footer component
 │   │   ├── History/
-│   │   │   ├── History.jsx         # History component
-│   │   │   ├── History.css         # Styles for History component
+│   │   │   ├── History.css         # History component
+│   │   │   ├── History.jsx         # Styles for History component
 │   │   ├── Home/
-│   │   │   ├── Home.jsx            # Home component
-│   │   │   ├── Home.css            # Styles for Home component
+│   │   │   ├── Home.css            # Home component
+│   │   │   ├── Home.jsx            # Styles for Home component
 │   │   ├── Hooks/
 │   │   │   ├── LanguageHook.jsx    # Hook for handling language logic
 │   │   │   ├── LocationHook.jsx    # Hook for handling location logic
 │   │   ├── Modals/
-│   │   │   ├── PersonalDetailsModal.jsx  # Personal Details Modal component
-│   │   │   ├── PersonalDetailsModal.css  # Styles for Personal Details Modal
-│   │   │   ├── LanguageSelectionModal.jsx # Language Selection Modal component
-│   │   │   ├── LanguageSelectionModal.css # Styles for Language Selection Modal
+│   │   │   ├── LanguageSelectionModal.css # Language Selection Modal component
+│   │   │   ├── LanguageSelectionModal.jsx # Styles for Language Selection Modal
+│   │   │   ├── PersonalDetailsModal.css   # Personal Details Modal component
+│   │   │   ├── PersonalDetailsModal.jsx   # Styles for Personal Details Modal
 │   │   ├── NavbarHigher/
-│   │   │   ├── NavbarHigher.jsx   # Navbar (Higher) component
-│   │   │   ├── NavbarHigher.css   # Styles for Navbar (Higher) component
+│   │   │   ├── NavbarHigher.jsx    # Navbar (Higher) component
+│   │   │   ├── NavbarHigher.css    # Styles for Navbar (Higher) component
 │   │   ├── NavbarLower/
-│   │   │   ├── NavbarLower.jsx    # Navbar (Lower) component
-│   │   │   ├── NavbarLower.css    # Styles for Navbar (Lower) component
+│   │   │   ├── NavbarLower.jsx     # Navbar (Lower) component
+│   │   │   ├── NavbarLower.css     # Styles for Navbar (Lower) component
 │   │   ├── Offers/
 │   │   │   ├── Offers.jsx          # Offers component
 │   │   │   ├── Offers.css          # Styles for Offers component
@@ -72,7 +72,7 @@ Amazon_Clone_Website_Repo/
 │   │   │   ├── Services.css        # Styles for Services component
 │   ├── pages/
 │   │   ├── HomePage.jsx            # Home Page component
-│   ├── App.jsx                      # Main App component
+│   ├── App.jsx                     # Main App component
 │   ├── App.css                     # Styles for App component
 │   ├── index.jsx                   # Entry point for React application
 │   ├── index.css                   # Global styles
