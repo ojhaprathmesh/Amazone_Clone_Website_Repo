@@ -6,7 +6,7 @@ import useLanguage from "../Hooks/LanguageHook";
 import "./NavbarHigher.css";
 
 function NavbarHigher({ personalDetail = { name: "", city: "", pincode: "" }, onDetailsClick }) {
-    const countryCode = useCountryCode();
+    const { countryCode, getFlagUrl } = useCountryCode();
     const { currentLanguage, handleLanguageChange, currentLangDetails } = useLanguage();
     const [isLangModalOpen, setIsLangModalOpen] = useState(false);
 
@@ -48,8 +48,8 @@ function NavbarHigher({ personalDetail = { name: "", city: "", pincode: "" }, on
                     className="lang"
                     onClick={() => setIsLangModalOpen(!isLangModalOpen)}
                 >
-                    {countryCode !== "Unknown" && (
-                        <img className="flag-icon" src={`https://flagcdn.com/w80/${countryCode.toLowerCase()}.png`} alt="Country Flag" />
+                    {getFlagUrl() && (
+                        <img className="flag-icon" src={getFlagUrl()} alt="Country Flag" />
                     )}
                     <span>{currentLangDetails?.code}</span>
                 </div>
