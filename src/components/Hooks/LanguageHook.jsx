@@ -2,7 +2,7 @@ import { useState } from "react";
 import { languages } from "../Modals/LanguageSelectionModal";
 
 const useLanguage = () => {
-    const [currentLanguage, setCurrentLanguage] = useState("EN"); // Default language
+    const [currentLanguage, setCurrentLanguage] = useState("EN");
 
     const handleLanguageChange = (code) => {
         setCurrentLanguage(code);
