@@ -37,9 +37,12 @@
 .lang-modal-content ul {
     list-style: none;
     padding: 0;
+    text-align: left;
 }
 
 .lang-modal-content ul li {
+    display: flex;
+    align-items: center;
     padding: 10px;
     cursor: pointer;
     border-bottom: 1px solid #ccc;
@@ -47,10 +50,47 @@
 
 .lang-modal-content ul li:hover {
     background-color: #f0f0f0;
+    color: orange;
 }
 
-/* src/components/Modals/LanguageSelectionModal.css */
-.lang-modal-content ul li.selected {
-    font-weight: bold;
-    color: blue;
+.lang-modal-content ul li input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* Custom radio button styles */
+.lang-modal-content ul li input[type="radio"] {
+    appearance: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lang-modal-content ul li input[type="radio"]::before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: transparent;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.lang-modal-content ul li:hover input[type="radio"]::before {
+    background-color: orange;
+}
+
+.lang-modal-content ul li input[type="radio"]:checked::before {
+    background-color: rgb(250, 130, 80);
+}
+
+.lang-modal-content ul li label {
+    cursor: pointer;
 }
