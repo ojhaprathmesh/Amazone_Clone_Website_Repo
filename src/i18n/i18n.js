@@ -9,10 +9,10 @@ i18n
     fallbackLng: 'EN',
     lng: 'EN', // Default language
     backend: {
-      loadPath: '/locales/{{lng}}.json',
+      loadPath: '/locales/{{lng}}.json', // Path to translation files
     },
     interpolation: {
-      escapeValue: false,
+      escapeValue: false, // React already protects from XSS
     },
   });
 

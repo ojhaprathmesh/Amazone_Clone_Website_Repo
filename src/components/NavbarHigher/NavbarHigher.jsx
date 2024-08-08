@@ -29,7 +29,9 @@ function NavbarHigher({ personalDetail = { name: "", city: "", pincode: "" }, on
                     <span>
                         <img src={assets.images.location} id="loc-sprite" alt="Location Icon" />
                         <div className="loc-details">
-                            <span className="loc-line" id="loc-line-1">{t('Deliver to')} {personalDetail?.name}</span>
+                            <span className="loc-line" id="loc-line-1">
+                                {currentLanguage === "HI" ? `${personalDetail?.name} ${t('deliver_to')}` : `${t('deliver_to')} ${personalDetail?.name}`}
+                            </span>
                             <span className="loc-line" id="loc-line-2">{personalDetail?.city} {personalDetail?.pincode}</span>
                         </div>
                     </span>
