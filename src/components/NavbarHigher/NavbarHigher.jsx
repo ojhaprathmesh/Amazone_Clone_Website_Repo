@@ -12,6 +12,7 @@ function NavbarHigher({ personalDetail = { name: "", city: "", pincode: "" }, on
     const { getFlagUrl } = useCountryCode();
     const { currentLanguage, handleLanguageChange: changeLanguage, currentLangDetails } = useLanguage();
     const [isLangModalOpen, setIsLangModalOpen] = useState(false);
+    const [hovering, setHovering] = useState(false);
 
     const handleChangeLanguage = (langCode) => {
         changeLanguage(langCode);
@@ -29,9 +30,7 @@ function NavbarHigher({ personalDetail = { name: "", city: "", pincode: "" }, on
                     <span>
                         <img src={assets.images.location} id="loc-sprite" alt="Location Icon" />
                         <div className="loc-details">
-                            <span className="loc-line" id="loc-line-1">
-                                {currentLanguage === "HI" ? `${personalDetail?.name} ${t('deliver_to')}` : `${t('deliver_to')} ${personalDetail?.name}`}
-                            </span>
+                            <span className="loc-line" id="loc-line-1">{i18n.language === 'HI' ? `${personalDetail?.name} ${t('deliver_to')}` : `${t('deliver_to')} ${personalDetail?.name}`}</span>
                             <span className="loc-line" id="loc-line-2">{personalDetail?.city} {personalDetail?.pincode}</span>
                         </div>
                     </span>
@@ -40,8 +39,7 @@ function NavbarHigher({ personalDetail = { name: "", city: "", pincode: "" }, on
             <div className="high-mid">
                 <div className="search">
                     <div className="bar">
-                        <button id="category">
-                            {t('all')}
+                        <button id="category">All
                             <div className="triangle-down"></div>
                         </button>
                     </div>
@@ -56,7 +54,11 @@ function NavbarHigher({ personalDetail = { name: "", city: "", pincode: "" }, on
                 </div>
             </div>
             <div className="high-right">
-                <div className="lang" onClick={() => setIsLangModalOpen(!isLangModalOpen)}>
+                <div 
+                    className="lang" 
+                    onMouseEnter={() => setIsLangModalOpen(true)} 
+                    onMouseLeave={() => !hovering && setIsLangModalOpen(false)}
+                >
                     {getFlagUrl() && (
                         <img className="flag-icon" src={getFlagUrl()} alt="Country Flag" />
                     )}
@@ -75,6 +77,11 @@ function NavbarHigher({ personalDetail = { name: "", city: "", pincode: "" }, on
             </div>
             <LanguageSelectionModal
                 isOpen={isLangModalOpen}
+                onMouseEnter={() => setHovering(true)}
+                onMouseLeave={() => {
+                    setHovering(false);
+                    setIsLangModalOpen(false);
+                }}
                 onClose={() => setIsLangModalOpen(false)}
                 onSelectLanguage={handleChangeLanguage}
                 currentLanguage={currentLanguage}
