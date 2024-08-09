@@ -39,7 +39,7 @@ function NavbarHigher({ personalDetail = { name: "", city: "", pincode: "" }, on
             <div className="high-mid">
                 <div className="search">
                     <div className="bar">
-                        <button id="category">All
+                        <button id="category">{t('all')}
                             <div className="triangle-down"></div>
                         </button>
                     </div>
