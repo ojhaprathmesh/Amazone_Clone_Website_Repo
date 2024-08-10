@@ -86,7 +86,7 @@ Amazon_Clone_Website_Repo/
 1. **Clone the repository:**
 
    ```cmd
-   git clone <repository_url>
+   git clone https://github.com/ojhaprathmesh/Amazone_Clone_Website_Repo.git
    ```
 
 2. **Navigate to the project directory:**
