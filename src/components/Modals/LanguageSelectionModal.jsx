@@ -1,19 +1,9 @@
 import React from "react";
-import { useTranslation } from 'react-i18next';
+import useLanguage, { languages } from "../Hooks/LanguageHook";
 import "./LanguageSelectionModal.css";
 
-export const languages = [
-  { code: "EN", name: "EN - English" },
-  { code: "HI", name: "HI - हिंदी" },
-  { code: "TA", name: "TA - தமிழ்" },
-  { code: "TE", name: "TE - తెలుగు  " },
-  { code: "KN", name: "KN - ಕನ್ನಡ" },
-  { code: "MR", name: "MR - मराठी" },
-  { code: "ML", name: "ML - മലയാളം" },
-];
-
 function LanguageSelectionModal({ isOpen, onClose, onSelectLanguage, currentLanguage, onMouseEnter, onMouseLeave }) {
-  const { t } = useTranslation();
+  const { translate } = useLanguage();
   if (!isOpen) return null;
 
   return (
@@ -25,7 +15,7 @@ function LanguageSelectionModal({ isOpen, onClose, onSelectLanguage, currentLang
     >
       <div className="lang-modal-content" onClick={(e) => e.stopPropagation()}>
         <button className="close-button" onClick={onClose}>✖</button>
-        <h2>{t('select_language')}</h2>
+        <h2>{translate('select_language')}</h2>
         <ul>
           {languages.map(lang => (
             <li
