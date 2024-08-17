@@ -1,14 +1,13 @@
 {
-    "welcome": "Welcome to Amazon Clone",
-    "search_placeholder": "Search Amazon.in",
-    "profile": "Profile",
-    "lists": "Lists",
-    "account": "Account",
-    "returns": "Returns",
-    "orders": "Orders",
-    "cart": "Cart",
-    "select_language": "Select Language",
-    "all": "All",
-    "deliver_to": "Deliver to"
-  }
-  
+  "welcome": "Welcome to Amazon Clone",
+  "search_placeholder": "Search Amazon.in",
+  "profile": "Profile",
+  "lists": "Lists",
+  "account": "Account",
+  "returns": "Returns",
+  "orders": "Orders",
+  "cart": "Cart",
+  "select_language": "Select Language",
+  "all": "All",
+  "deliver_to": "Deliver to"
+}
