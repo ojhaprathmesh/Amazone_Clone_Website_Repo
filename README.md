@@ -23,6 +23,9 @@ This is a full-stack Amazon clone project built using React, Express, and MongoD
 ```plaintext
 Amazon_Clone_Website_Repo/
 ├── public/
+│   ├── locales/
+│   │   ├── EN.json                 # English translation
+│   │   ├── HI.json                 # Hindi translation
 │   ├── redirect                    # File for redirect logic
 │   ├── index.html                  # Main HTML file
 ├── src/
@@ -31,8 +34,8 @@ Amazon_Clone_Website_Repo/
 │   │   │   ├── Amazon_Ember.ttf    # Custom font
 │   │   ├── images/
 │   │   │   ├── amazon_icon.png     # Amazon icon image
-│   │   │   ├── logo.png            # Project logo image
 │   │   │   ├── location.png        # Location icon image
+│   │   │   ├── logo.png            # Project logo image
 │   │   ├── assets.jsx              # Assets handling file
 │   ├── components/
 │   │   ├── About/
@@ -70,6 +73,8 @@ Amazon_Clone_Website_Repo/
 │   │   ├── Services/
 │   │   │   ├── Services.css        # Styles for Services component
 │   │   │   ├── Services.jsx        # Services component
+│   ├── i18n/
+│   │   ├── i18n.js
 │   ├── pages/
 │   │   ├── HomePage.jsx            # Home Page component
 │   ├── App.jsx                     # Main App component
