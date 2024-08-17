@@ -27,17 +27,15 @@ const translations = {
         all: "सभी",
         deliver_to: "को डिलीवर करें",
     },
-    // Add more translations for other languages here...
 };
 
 const languages = [
     { code: "EN", name: "EN - English" },
     { code: "HI", name: "HI - हिंदी" },
-    // Add other languages here...
 ];
 
 const useLanguage = () => {
-    const [currentLanguage, setCurrentLanguage] = useState("EN"); // Default language
+    const [currentLanguage, setCurrentLanguage] = useState("EN");
 
     const handleLanguageChange = (code) => {
         setCurrentLanguage(code);
@@ -47,9 +45,7 @@ const useLanguage = () => {
         return translations[currentLanguage][key] || key;
     };
 
-    const currentLangDetails = languages.find(lang => lang.code === currentLanguage);
-
-    return { currentLanguage, handleLanguageChange, currentLangDetails, translate, languages };
+    return { currentLanguage, handleLanguageChange, translate, languages };
 };
 
 export default useLanguage;
