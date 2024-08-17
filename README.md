@@ -23,9 +23,6 @@ This is a full-stack Amazon clone project built using React, Express, and MongoD
 ```plaintext
 Amazon_Clone_Website_Repo/
 ├── public/
-│   ├── locales/
-│   │   ├── EN.json                 # English translation
-│   │   ├── HI.json                 # Hindi translation
 │   ├── redirect                    # File for redirect logic
 │   ├── index.html                  # Main HTML file
 ├── src/
@@ -57,6 +54,8 @@ Amazon_Clone_Website_Repo/
 │   │   │   ├── LanguageHook.jsx    # Hook for handling language logic
 │   │   │   ├── LocationHook.jsx    # Hook for handling location logic
 │   │   ├── Modals/
+│   │   │   ├── AccountDetailsModal.css    # Styles for Account Details Modal
+│   │   │   ├── AccountDetailsModal.jsx    # Account Details Modal component
 │   │   │   ├── LanguageSelectionModal.css # Styles for Language Selection Modal
 │   │   │   ├── LanguageSelectionModal.jsx # Language Selection Modal component
 │   │   │   ├── PersonalDetailsModal.css   # Styles for Personal Details Modal
