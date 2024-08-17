@@ -73,8 +73,6 @@ Amazon_Clone_Website_Repo/
 │   │   ├── Services/
 │   │   │   ├── Services.css        # Styles for Services component
 │   │   │   ├── Services.jsx        # Services component
-│   ├── i18n/
-│   │   ├── i18n.js
 │   ├── pages/
 │   │   ├── HomePage.jsx            # Home Page component
 │   ├── App.jsx                     # Main App component
