@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import assets from "../../assets/assets";
 import LanguageSelectionModal from "../Modals/LanguageSelectionModal";
+import AccountDetailsModal from "../Modals/AccountDetailsModal";
 import useCountryCode from "../Hooks/LocationHook";
 import useLanguage from "../Hooks/LanguageHook";
 import "./NavbarHigher.css";
@@ -9,11 +10,40 @@ function NavbarHigher({ personalDetail = { name: "", city: "", pincode: "" }, on
     const { translate, currentLanguage, handleLanguageChange, currentLangDetails } = useLanguage();
     const { getFlagUrl } = useCountryCode();
     const [isLangModalOpen, setIsLangModalOpen] = useState(false);
-    const [hovering, setHovering] = useState(false);
+    const [isAccountModalOpen, setIsAccountModalOpen] = useState(false);
+    const [isUserHovered, setIsUserHovered] = useState(false);
+    const [isAccountModalHovered, setIsAccountModalHovered] = useState(false);
 
     const handleChangeLanguage = (langCode) => {
         handleLanguageChange(langCode);
         setIsLangModalOpen(false);
+    };
+
+    const handleMouseEnterUser = () => {
+        setIsUserHovered(true);
+        setIsAccountModalOpen(true);
+    };
+
+    const handleMouseLeaveUser = () => {
+        setIsUserHovered(false);
+        setTimeout(() => {
+            if (!isAccountModalHovered) {
+                setIsAccountModalOpen(false);
+            }
+        }, 100); // Small delay to allow for hover transition
+    };
+
+    const handleMouseEnterAccountModal = () => {
+        setIsAccountModalHovered(true);
+    };
+
+    const handleMouseLeaveAccountModal = () => {
+        setIsAccountModalHovered(false);
+        setTimeout(() => {
+            if (!isUserHovered) {
+                setIsAccountModalOpen(false);
+            }
+        }, 100); // Small delay to allow for hover transition
     };
 
     return (
@@ -57,14 +87,22 @@ function NavbarHigher({ personalDetail = { name: "", city: "", pincode: "" }, on
                 <div 
                     className="lang" 
                     onMouseEnter={() => setIsLangModalOpen(true)} 
-                    onMouseLeave={() => !hovering && setIsLangModalOpen(false)}
+                    onMouseLeave={() => {
+                        if (!isUserHovered) {
+                            setIsLangModalOpen(false);
+                        }
+                    }}
                 >
                     {getFlagUrl() && (
                         <img className="flag-icon" src={getFlagUrl()} alt="Country Flag" />
                     )}
                     <span>{currentLangDetails?.code}</span>
                 </div>
-                <div className="user">
+                <div 
+                    className="user"
+                    onMouseEnter={handleMouseEnterUser}
+                    onMouseLeave={handleMouseLeaveUser}
+                >
                     <div id="profile">{translate('profile')}</div>
                     <div className="lists">{translate('lists')}</div>
                     <div className="account">{translate('account')}</div>
@@ -77,14 +115,20 @@ function NavbarHigher({ personalDetail = { name: "", city: "", pincode: "" }, on
             </div>
             <LanguageSelectionModal
                 isOpen={isLangModalOpen}
-                onMouseEnter={() => setHovering(true)}
+                onMouseEnter={() => setIsUserHovered(true)}
                 onMouseLeave={() => {
-                    setHovering(false);
+                    setIsUserHovered(false);
                     setIsLangModalOpen(false);
                 }}
                 onClose={() => setIsLangModalOpen(false)}
                 onSelectLanguage={handleChangeLanguage}
                 currentLanguage={currentLanguage}
+            />
+            <AccountDetailsModal
+                isOpen={isAccountModalOpen}
+                onClose={() => setIsAccountModalOpen(false)}
+                onMouseEnter={handleMouseEnterAccountModal}
+                onMouseLeave={handleMouseLeaveAccountModal}
             />
         </nav>
     );
