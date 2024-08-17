@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useTranslation } from 'react-i18next';
+import i18n from '../../i18n/i18n'; // Import i18n configuration
 import assets from "../../assets/assets";
 import LanguageSelectionModal from "../Modals/LanguageSelectionModal";
 import useCountryCode from "../Hooks/LocationHook";
@@ -6,13 +8,15 @@ import useLanguage from "../Hooks/LanguageHook";
 import "./NavbarHigher.css";
 
 function NavbarHigher({ personalDetail = { name: "", city: "", pincode: "" }, onDetailsClick }) {
+    const { t } = useTranslation();
     const { getFlagUrl } = useCountryCode();
-    const { currentLanguage, handleLanguageChange: changeLanguage, currentLangDetails, translate } = useLanguage();
+    const { currentLanguage, handleLanguageChange: changeLanguage, currentLangDetails } = useLanguage();
     const [isLangModalOpen, setIsLangModalOpen] = useState(false);
     const [hovering, setHovering] = useState(false);
 
     const handleChangeLanguage = (langCode) => {
         changeLanguage(langCode);
+        i18n.changeLanguage(langCode); // Change the language in i18next
         setIsLangModalOpen(false);
     };
 
@@ -26,7 +30,7 @@ function NavbarHigher({ personalDetail = { name: "", city: "", pincode: "" }, on
                     <span>
                         <img src={assets.images.location} id="loc-sprite" alt="Location Icon" />
                         <div className="loc-details">
-                            <span className="loc-line" id="loc-line-1">{`${translate('deliver_to')} ${personalDetail?.name}`}</span>
+                            <span className="loc-line" id="loc-line-1">{i18n.language === 'HI' ? `${personalDetail?.name} ${t('deliver_to')}` : `${t('deliver_to')} ${personalDetail?.name}`}</span>
                             <span className="loc-line" id="loc-line-2">{personalDetail?.city} {personalDetail?.pincode}</span>
                         </div>
                     </span>
@@ -35,12 +39,12 @@ function NavbarHigher({ personalDetail = { name: "", city: "", pincode: "" }, on
             <div className="high-mid">
                 <div className="search">
                     <div className="bar">
-                        <button id="category">{translate('all')}
+                        <button id="category">{t('all')}
                             <div className="triangle-down"></div>
                         </button>
                     </div>
                     <div className="bar">
-                        <input id="search-text" type="text" placeholder={translate('search_placeholder')} />
+                        <input id="search-text" type="text" placeholder={t('search_placeholder')} />
                     </div>
                     <div className="bar">
                         <button id="search-btn">
@@ -61,15 +65,15 @@ function NavbarHigher({ personalDetail = { name: "", city: "", pincode: "" }, on
                     <span>{currentLangDetails?.code}</span>
                 </div>
                 <div className="user">
-                    <div id="profile">{translate('profile')}</div>
-                    <div className="lists">{translate('lists')}</div>
-                    <div className="account">{translate('account')}</div>
+                    <div id="profile">{t('profile')}</div>
+                    <div className="lists">{t('lists')}</div>
+                    <div className="account">{t('account')}</div>
                 </div>
                 <div className="return-order">
-                    <div id="returns">{translate('returns')}</div>
-                    <div id="orders">{translate('orders')}</div>
+                    <div id="returns">{t('returns')}</div>
+                    <div id="orders">{t('orders')}</div>
                 </div>
-                <div id="cart">{translate('cart')}</div>
+                <div id="cart">{t('cart')}</div>
             </div>
             <LanguageSelectionModal
                 isOpen={isLangModalOpen}
