@@ -7,7 +7,7 @@ import "./NavbarHigher.css";
 
 function NavbarHigher({ personalDetail = { name: "", city: "", pincode: "" }, onDetailsClick }) {
     const { getFlagUrl } = useCountryCode();
-    const { currentLanguage, handleLanguageChange: changeLanguage, translate, languages } = useLanguage();
+    const { currentLanguage, handleLanguageChange: changeLanguage, currentLangDetails, translate } = useLanguage();
     const [isLangModalOpen, setIsLangModalOpen] = useState(false);
     const [hovering, setHovering] = useState(false);
 
@@ -58,7 +58,7 @@ function NavbarHigher({ personalDetail = { name: "", city: "", pincode: "" }, on
                     {getFlagUrl() && (
                         <img className="flag-icon" src={getFlagUrl()} alt="Country Flag" />
                     )}
-                    <span>{currentLanguage}</span>
+                    <span>{currentLangDetails?.code}</span>
                 </div>
                 <div className="user">
                     <div id="profile">{translate('profile')}</div>
@@ -81,8 +81,6 @@ function NavbarHigher({ personalDetail = { name: "", city: "", pincode: "" }, on
                 onClose={() => setIsLangModalOpen(false)}
                 onSelectLanguage={handleChangeLanguage}
                 currentLanguage={currentLanguage}
-                translate={translate}  {/* Pass translate here */}
-                languages={languages}  {/* Pass languages here */}
             />
         </nav>
     );
