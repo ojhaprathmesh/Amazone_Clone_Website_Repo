@@ -1,6 +1,6 @@
 # Amazon Clone
 
-This is a full  stack Amazon clone project built using React, Express, and MongoDB, aiming to replicate the core features of Amazon's e-commerce platform. The application features a dynamic user interface with modals for personal details and language selection, and utilizes various libraries and tools to enhance functionality and user experience.
+This is a full-stack Amazon clone project built using React, Express, and MongoDB, aiming to replicate the core features of Amazon's e-commerce platform. The application features a dynamic user interface with modals for personal details and language selection, and utilizes various libraries and tools to enhance functionality and user experience.
 
 ## Features
 
