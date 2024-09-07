@@ -12,7 +12,6 @@ function AccountDetailsModal({ isOpen, onClose, onMouseEnter, onMouseLeave }) {
         >
             <div className="account-modal-content" onClick={(e) => e.stopPropagation()}>
                 <button className="close-button" onClick={onClose}>✖</button>
-                <h2>Your Account</h2>
                 <div className="account-sections">
                     <div className="section">
                         <h3>Buy it again</h3>
